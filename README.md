@@ -105,20 +105,20 @@ The best performance was by a Random Forest Classifier, an ensemble type of algo
 
 1. **Cumulative gains curve**: indicates the relationship between the percentage of sample (users in the dataset) and the number of interested people that our model is able to classify in that certain sample percentage. In this case, the trained model was able to include 80% of interested customers using only 40% of the dataset.
 2. **Lift curve**: indicates how good is the trained model compared to a random selection of potential customers. In this case, the trained model is more than 2 times better than just a random model.
-<p align="center"><img src="imgs/model-performance-01.png"></p>
+<p align="center"><img src="reports/imgs/model-performance-01.png"></p>
 
 <br>
 
 * Many machine learning algorithms are probabilistic, meaning they can calculate a probability of belonging to a certain class. Unfortunately, most of them, like the one used in this project, are not well calibrated. This means that they may be over-confident in some cases and under-confident in other cases.
 * Therefore, it is often a good idea to calibrate the predicted probabilities for nonlinear machine learning models. However, in this specific case, the calibration had a worse performance in terms of confidence than the not calibrated model.
-<p align="center"><img src="imgs/model-calibration-01.png"></p>
+<p align="center"><img src="reports/imgs/model-calibration-01.png"></p>
 
 <br>
 
 * Both were evaluated through the Brier score loss, and as you can see below the calibrated model was a slightly worse.
 <div align="center">
-  <img src="imgs/brier-score-loss.png">
-  <img src="imgs/model-calibration-02.png">
+  <img src="reports/imgs/brier-score-loss.png">
+  <img src="reports/imgs/model-calibration-02.png">
 </div>
 
 ---
@@ -126,7 +126,7 @@ The best performance was by a Random Forest Classifier, an ensemble type of algo
 # 5. Conclusions
 ## 5.1. Results
 * Now the business team can easily predict and rank as many users as they want through an integrated REST API hosted on cloud and being used by scripts in Google sheets just by writing each customer's information and clicking on "propensity score" at the top of the page.
-<p align="center"><img src="imgs/results01.gif"></p>
+<p align="center"><img src="reports/imgs/results01.gif"></p>
 
 ## 5.2. What's next
 * Deal in a different way with outliers.
