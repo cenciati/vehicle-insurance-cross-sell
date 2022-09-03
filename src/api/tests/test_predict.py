@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.api.mocks import mock_predict
+from src.api.mocks.mock_predict import mock_predict
 from src.api.routes.predict import predict
 import json
 
