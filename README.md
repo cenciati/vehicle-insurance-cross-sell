@@ -1,5 +1,5 @@
 # Vehicle insurance cross-sell
-<p align="center"><img src="imgs/banner.png"></p>
+<p align="center"><img src="reports/imgs/banner.png"></p>
 <sub>Author: Gabriel O. Cenciati</sub><br>
 <sub>Date: 04-21-2022</sub>
 
