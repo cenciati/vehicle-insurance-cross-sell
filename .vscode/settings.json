@@ -1,0 +1,10 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "files.exclude": {
+        "**/*.pyc": { "when": "$(basename).py" },
+        "**/__pycache__": true,
+        "**/*.pytest_cache": true
+    }
+}
