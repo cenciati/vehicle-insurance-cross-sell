@@ -2,9 +2,7 @@ from typing import Dict, List
 import numpy as np
 
 
-def mock_predict(
-    size: int = 1
-) -> Dict[str, str | int] | List[Dict[str, str | int]]:
+def mock_predict(size: int = 1) -> Dict[str, str | int] | List[Dict[str, str | int]]:
     """
     creates fake data to test the `predict` function.
 
