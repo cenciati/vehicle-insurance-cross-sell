@@ -77,7 +77,6 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-*.ini
 
 # Translations
 *.mo
