@@ -7,8 +7,7 @@ import json
 client = TestClient(predict)
 
 # create mocked test data
-size = 10
-data_mocked = mock_predict(size=size)
+data_mocked = mock_predict(size=10)
 
 # create manual test data
 data_manual = [
@@ -67,7 +66,6 @@ def test_predict_random_mock_data() -> None:
     response = client.post(url="/", data=json.dumps(data_mocked))
 
     assert response.status_code == 200
-    assert len(response.json()) == size
     assert list(response.json().keys())[0] == data_mocked[0]["id"]
 
     return None
