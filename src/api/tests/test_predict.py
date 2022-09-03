@@ -23,7 +23,7 @@ data_manual = [
         "Vehicle_Damage": "Yes",
         "Annual_Premium": 35786.0,
         "Policy_Sales_Channel": 152.0,
-        "Vintage": 53,
+        "Vintage": 53
     },
     {
         "id": 293843,
@@ -36,8 +36,8 @@ data_manual = [
         "Vehicle_Damage": "No",
         "Annual_Premium": 94386.0,
         "Policy_Sales_Channel": 244.0,
-        "Vintage": 101,
-    },
+        "Vintage": 101
+    }
 ]
 
 
