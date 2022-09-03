@@ -35,6 +35,7 @@ def data_preprocessing_main(
     if ["Yes", "No"] == list(df.loc[:, "vehicle_damage"].unique()):
         df = pd.get_dummies(df, columns=["vehicle_damage"], drop_first=True)
     else:
+        df["vehicle_damage"] = df["vehicle_damage"].map({"Yes": 1, "No": 1})
         df.rename(columns={"vehicle_damage": "vehicle_damage_Yes"}, inplace=True)
 
     # standardize and rescale
