@@ -32,7 +32,10 @@ def data_preprocessing_main(
     df.loc[:, "region_code"] = df.loc[:, "region_code"].map(col_frequency)
 
     # encode
-    df = pd.get_dummies(df, columns=["vehicle_damage"], drop_first=True)
+    if ["Yes", "No"] == list(df.loc[:, "vehicle_damage"].unique()):
+        df = pd.get_dummies(df, columns=["vehicle_damage"], drop_first=True)
+    else:
+        df.rename(columns={"vehicle_damage": "vehicle_damage_Yes"}, inplace=True)
 
     # standardize and rescale
     for col, pp in preprocessors.items():
