@@ -35,7 +35,6 @@ jobs:
           "E501"
           "E722"
           "W503"
-        per-file-ignores: "src/pipeline/stages/data_preprocessing.py:F401"
 
     - name: pytest api
       run: |
