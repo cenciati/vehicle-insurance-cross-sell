@@ -1,4 +1,3 @@
-import os
 from src.pipeline.stages.data_cleaning import data_cleaning_main
 from src.pipeline.stages.feature_engineering import feature_engineering_main
 from src.pipeline.stages.data_preprocessing import data_preprocessing_main
@@ -9,24 +8,19 @@ import pandas as pd
 class Pipeline:
     def __init__(self) -> None:
         # set constants
-        self.HOME_PATH = os.getcwd()
         self.MODELS_PATH = "models"
         self.PARAMETERS_PATH = "src/pipeline/parameters"
 
         # load serialized model
-        self.__model = joblib.load(
-            f"{self.HOME_PATH}/{self.MODELS_PATH}/rf_classifier_tuned.joblib"
-        )
+        self.__model = joblib.load(f"{self.MODELS_PATH}/rf_classifier_tuned.joblib")
 
         # load parameters
-        self.__mms_age = joblib.load(
-            f"{self.HOME_PATH}/{self.PARAMETERS_PATH}/mms_age.joblib"
-        )
+        self.__mms_age = joblib.load(f"{self.PARAMETERS_PATH}/mms_age.joblib")
         self.__mms_annual_premium_per_age = joblib.load(
-            f"{self.HOME_PATH}/{self.PARAMETERS_PATH}/mms_annual_premium_per_age.joblib"
+            f"{self.PARAMETERS_PATH}/mms_annual_premium_per_age.joblib"
         )
         self.__mms_annual_premium = joblib.load(
-            f"{self.HOME_PATH}/{self.PARAMETERS_PATH}/mms_annual_premium.joblib"
+            f"{self.PARAMETERS_PATH}/mms_annual_premium.joblib"
         )
 
     def data_cleaning(self, df: pd.DataFrame) -> pd.DataFrame:
