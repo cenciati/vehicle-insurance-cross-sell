@@ -4,21 +4,18 @@ SHELL = /bin/bash
 PYTHON := python3
 PIP := pip3
 IMAGE_NAME := api:latest
-CONTAINER_NAME := api_get_prediction
+CONTAINER_NAME := api_vehicle_insurance
 
 .PHONY: help
 help:
 	@echo "~~~~~~~~~~~~~~~~~~~HELP~~~~~~~~~~~~~~~~~~~~"
-	@echo "style : triggers the formatter and linter."
 	@echo "setup : prepares the enviornment."
 	@echo "clean : cleans the environment."
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-style:
-	???
-
 .ONESHELL:
-setup: style
+.PHONY: setup
+setup:
 	${PYTHON} -m venv .venv
 	source .venv/bin/activate
 	${PIP} install --no-cache-dir --upgrade -r requirements.txt
@@ -34,5 +31,3 @@ clean: setup
 	pre-commit uninstall
 	deactivate
 	rm -rf .venv/
-
-.PHONY: help style setup clean
