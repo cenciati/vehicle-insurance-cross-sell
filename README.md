@@ -44,7 +44,7 @@ $ make clean
 
 ---
 
-# **1. Business problem**
+# **1. 💼 Business problem**
 ## 1.1. Introduction
 An insurer that provides health insurance to its customers needs help building a model to rank last year's customers in order of propensity to buy new insurance because it does not have enough money to spend convincing each customer separately.
 
@@ -63,7 +63,7 @@ Our interest here is to evaluate how good the ranking made by the model was. Tha
 
 ---
 
-# **2. Strategy**
+# **2. 📃 Strategy**
 ## 2.1. CRISP-DM
 CRISP-DM stands for cross-industry process for data mining. The CRISP-DM methodology provides a structured approach to planning a data mining project. It is a robust and well-proven methodology.
 
@@ -90,7 +90,7 @@ This model is an idealised sequence of events. In practice many of the tasks can
 
 ---
 
-# **3. Insights**
+# **3. 🤯 Insights**
 ## 3.1. Hypotheses
 <img src="reports/imgs/mind-map.png">
 <img src="reports/imgs/hypotheses-list.png">
@@ -117,7 +117,7 @@ This model is an idealised sequence of events. In practice many of the tasks can
 
 ---
 
-# **4. Solution**
+# **4. ✅ Solution**
 ## 4.1. Algorithm applied
 The best performance was by a Random Forest Classifier, an ensemble algorithm, which is a set of other less complex algorithms (decision trees in this case). Despite the fact that it has outperformed all other tested algorithms, one of its biggest cons is the computational cost which, depending on the circumstances, can become very expensive to retrain and maintain.
 
@@ -148,7 +148,7 @@ Both were evaluated using the **Brier score loss**, and as you can see below the
 
 ---
 
-# **5. Conclusions**
+# **5. 🏁 Conclusions**
 ## 5.1. Results
 * Now the business team can easily predict and rank as many users as they want via an integrated API, just by putting customer information into a ordinary spreadsheet and clicking on the button at the top of the page.
 <p align="center"><img src="reports/imgs/results01.gif"></p>
@@ -162,7 +162,7 @@ Both were evaluated using the **Brier score loss**, and as you can see below the
 
 ---
 
-# **6. References**
+# **6. 📎 References**
 [1] [What is the CRISP-DM methodology?](https://www.sv-europe.com/crisp-dm-methodology/)
 
 [2] [MLOps Guide](https://mlops-guide.github.io/)
