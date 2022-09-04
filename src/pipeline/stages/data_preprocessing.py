@@ -1,6 +1,5 @@
 from typing import Dict, Union
 import pandas as pd
-import sklearn
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
 
 
@@ -8,11 +7,7 @@ def data_preprocessing_main(
     df: pd.DataFrame,
     preprocessors: Dict[
         str,
-        Union[
-            sklearn.preprocessing._data.StandardScaler,
-            sklearn.preprocessing._data.MinMaxScaler,
-            sklearn.preprocessing._data.RobustScaler,
-        ],
+        Union[StandardScaler, MinMaxScaler, RobustScaler],
     ],
 ) -> pd.DataFrame:
     """
