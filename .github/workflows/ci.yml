@@ -27,8 +27,6 @@ jobs:
         python -m black $(git ls-files '*.py') --check
 
     - name: flake8 linter
-      run: |
-        python -m flake8 $(git ls-files '*.py')
       uses: py-actions/flake8@v2
       with:
         max-line-length: "120"
