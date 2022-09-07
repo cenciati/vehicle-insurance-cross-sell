@@ -1,8 +1,9 @@
-from src.pipeline.stages.data_cleaning import data_cleaning_main
-from src.pipeline.stages.feature_engineering import feature_engineering_main
-from src.pipeline.stages.data_preprocessing import data_preprocessing_main
 import joblib
 import pandas as pd
+
+from src.pipeline.stages.data_cleaning import data_cleaning_main
+from src.pipeline.stages.data_preprocessing import data_preprocessing_main
+from src.pipeline.stages.feature_engineering import feature_engineering_main
 
 
 class Pipeline:
