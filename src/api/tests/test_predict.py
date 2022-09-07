@@ -1,5 +1,7 @@
 import json
+from typing import Dict, List
 
+import pytest
 from fastapi import status
 from fastapi.testclient import TestClient
 
@@ -44,45 +46,33 @@ data_manual = [
 ]
 
 
-# testing status code
-def test_if_status_code_is_equal_200_with_a_single_item() -> None:
-    """checks if the response status code is equal to 200 with a single item"""
-    response = client.post(url="/", data=json.dumps(data_manual[0]))
+# test status code equals to 200
+@pytest.mark.parametrize("data", (data_manual[0], data_manual, data_mocked))
+def test_if_status_code_is_equal_200(data: Dict | List) -> None:
+    """checks if the response status code is equal to 200
+    different sizes of data"""
+    response = client.post(url="/", data=json.dumps(data))
     assert response.status_code == status.HTTP_200_OK
 
     return None
 
 
-def test_if_status_code_is_equal_200_with_multiple_items() -> None:
-    """checks if the response status code is equal to 200 with multiple tems"""
-    response = client.post(url="/", data=json.dumps(data_manual))
-    assert response.status_code == status.HTTP_200_OK
-
-    return None
-
-
-def test_if_status_code_is_equal_200_with_multiple_mocked_items() -> None:
-    """checks if the response status code is equal to 200 with multiple random items"""
-    response = client.post(url="/", data=json.dumps(data_mocked))
-    assert response.status_code == status.HTTP_200_OK
-
-    return None
-
-
-# testing predicted scores
+# test predicted scores
 def test_predict_with_a_single_item() -> None:
-    """checks the predicted score to a single item"""
+    """checks if the predicted score matches to a single item"""
     response = client.post(url="/", data=json.dumps(data_manual[0]))
     assert response.json()["381110"] == 0.058194444444444444
 
     return None
 
 
-def test_predict_with_multiple_items() -> None:
-    """checks the predicted score to multiple items"""
+@pytest.mark.parametrize(
+    ("id", "score"), (("381110", 0.058194444444444444), ("293843", 0.26901463886990207))
+)
+def test_predict_with_multiple_items(id: str, score: float) -> None:
+    """checks if the predicted score matches to multiple items"""
     response = client.post(url="/", data=json.dumps(data_manual))
-    assert response.json()["293843"] == 0.26901463886990207
-    assert response.json()["381110"] == 0.058194444444444444
+    assert response.json()[id] == score
 
     return None
 
