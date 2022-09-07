@@ -1,6 +1,7 @@
 from typing import Dict, Union
+
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
 
 
 def data_preprocessing_main(
