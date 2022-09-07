@@ -1,12 +1,13 @@
 # imports
 from typing import List, Type
-from pydantic import BaseModel
+
+import pandas as pd
 from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-import pandas as pd
-from src.pipeline.main import Pipeline
+from pydantic import BaseModel
 
+from src.pipeline.main import Pipeline
 
 # initialize fastapi class object
 predict = APIRouter()
