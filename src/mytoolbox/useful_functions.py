@@ -6,17 +6,18 @@ LinkedIn: https://www.linkedin.com/in/cenciati/
 GitHub: https://github.com/cenciati/
 """
 
+# other
+import warnings
+
 # data manipulation
 from typing import Optional
-import pandas as pd
+
 import numpy as np
-from scipy.stats import chi2_contingency
+import pandas as pd
 
 # data visualization
 from matplotlib import pyplot as plt
-
-# other
-import warnings
+from scipy.stats import chi2_contingency
 
 
 def jupyter_settings(
